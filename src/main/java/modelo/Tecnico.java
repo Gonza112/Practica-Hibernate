@@ -38,8 +38,8 @@ public class Tecnico extends Empleado{
             inverseJoinColumns=@JoinColumn(name="idespecialidad")
     )
     private List<Especialidad> especialidades;// N a N
-    @Column(nullable = false)
-    private String Estado;
+    
+    
     
     
     

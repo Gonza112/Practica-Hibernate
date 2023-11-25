@@ -27,20 +27,20 @@ public class MainProgram {
      */
     public static void main(String[] args) throws Exception {
 ////         TODO code application logic here
-//        Cliente Cliente = new Cliente();
+        Cliente Cliente = new Cliente();
         GestorCliente gCliente = new GestorCliente();
 //////    
 //          Cliente clientec = gCliente.getClienteXCuit(56165122);
 //          System.out.println(""+clientec.getDatosContacto().getId());
 
 
-//        
-//        try {
-//            obtenerConexion();
-//             System.out.println("BASE DE DATOS GENERADA");
-//        } catch (SQLException ex) {
-//            System.out.println("Error");
-//        }
+        
+        try {
+            obtenerConexion();
+             System.out.println("BASE DE DATOS GENERADA");
+        } catch (SQLException ex) {
+            System.out.println("Error");
+        }
 //         try {
 //        GestorCliente gCliente = new GestorCliente();
 //        Cliente cliente = gCliente.cargarClienteNuevo();

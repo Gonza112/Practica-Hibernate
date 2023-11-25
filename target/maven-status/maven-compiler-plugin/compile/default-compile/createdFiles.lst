@@ -1,5 +1,6 @@
 vista\ClienteVista$9.class
 controlador\GestorCliente.class
+vista\EspecialidadYServiciosVista$1.class
 modelo\Servicio.class
 vista\TecnicoVista$2.class
 controlador\GestorEspecialidadesyServicios.class
@@ -21,12 +22,14 @@ modelo\ReporteIncidencia.class
 controlador\Gestor.class
 modelo\ClienteServicio.class
 modelo\DatosContacto.class
+vista\OperadorVista.class
 vista\ClienteVista$3.class
 vista\TecnicoVista$1.class
 vista\ClienteVista$1.class
 vista\Principal$1.class
 modelo\Empleado.class
 persistencia\ConfigHibernate.class
+vista\TecnicoVista$6.class
 modelo\Tecnico.class
 vista\ClienteVista$6.class
 vista\ClienteVista$12.class

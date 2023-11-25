@@ -27,5 +27,6 @@ public abstract class Empleado  extends EntidadId{
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "iddatoscontacto")
     protected DatosContacto datosContacto;// 1 a 1
-    
+    @Column (nullable = false)
+    protected String Estado; // activo o inactivo
 }
