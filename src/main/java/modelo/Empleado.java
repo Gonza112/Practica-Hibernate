@@ -22,7 +22,7 @@ public abstract class Empleado  extends EntidadId{
     
     protected String apellido;
     protected String nombre;
-    @Column ( unique = true)
+    @Column ( nullable = false, unique = true)
     protected int legajo;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "iddatoscontacto")

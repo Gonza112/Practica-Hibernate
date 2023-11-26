@@ -22,7 +22,7 @@ public class GestorTecnico extends Gestor {
         public GestorTecnico() {
         sesion = ConfigHibernate.openSession();
     }
-            public void guardarTecnico(Object o) throws Exception { // para guardar cualquier cosa
+       public void guardarTecnico(Object o) throws Exception { // para guardar cualquier cosa
 
         boolean guardar = false;
         Transaction tx = null;
@@ -77,6 +77,28 @@ public class GestorTecnico extends Gestor {
             throw new Exception();
         }
         return lista;
+    }
+       public void modificarTecnico(Tecnico tecnico ) throws Exception { // para guardar cualquier cosa
+
+        boolean guardar = false;
+        Transaction tx = null;
+        try {
+            if (!sesion.getTransaction().isActive()) { 
+                tx = sesion.beginTransaction(); //
+                guardar = true;
+            }
+            sesion.merge(tecnico);
+          
+            if (guardar) {
+                tx.commit();
+               JOptionPane.showMessageDialog(null, "Guardado");
+            }
+        } catch (Exception e) {
+            if (guardar) {
+                tx.rollback(); // regresa atras en los cambios para evitar errores
+            }
+            throw new Exception(e.getMessage());
+        }
     }
 
 }

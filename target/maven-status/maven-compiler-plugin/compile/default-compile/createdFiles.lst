@@ -7,6 +7,7 @@ vista\EspecialidadYServiciosVista$3.class
 com\utn\trabajofinalargprograma\MainProgram.class
 modelo\OperadorMesaAyuda.class
 vista\ClienteVista$8.class
+vista\TecnicoVista$8.class
 vista\TecnicoVista$3.class
 vista\EspecialidadYServiciosVista$2.class
 controlador\Gestor.class
@@ -26,6 +27,7 @@ vista\EspecialidadYServiciosVista$1.class
 controlador\GestorGenerico.class
 vista\TecnicoVista$2.class
 controlador\GestorEspecialidadesyServicios.class
+vista\TecnicoVista$9.class
 vista\ClienteVista$2.class
 modelo\Especialidad.class
 vista\Principal$3.class
@@ -47,4 +49,5 @@ vista\EspecialidadYServiciosVista$4.class
 modelo\EntidadId.class
 modelo\Cliente.class
 vista\Principal$4.class
+vista\TecnicoVista$7.class
 vista\TecnicoVista$4.class

@@ -6,6 +6,8 @@ package controlador;
 
 import java.util.List;
 import javax.swing.JOptionPane;
+import modelo.Especialidad;
+import modelo.Tecnico;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -127,9 +129,9 @@ public class GestorGenerico extends Gestor {
         }
     }
 
-    public List buscarPorAtributo(Class clase, String nombreAtributo, Object valorAtributo) {
+    public List buscarPorAtributo(Class clase, Object valorAtributo) {
 
-        Query consulta = sesion.createQuery("from " + clase.getSimpleName() + " entidad where entidad." + nombreAtributo + " =:valor");
+        Query consulta = sesion.createQuery("from " + clase.getSimpleName() + " entidad where entidad." + " =:valor");
         consulta.setParameter("valor", valorAtributo);
         List<Object> lista;
         try {
@@ -210,6 +212,36 @@ public class GestorGenerico extends Gestor {
             }
             throw new Exception(e.getMessage());
         }
+    }
+          public Tecnico BuscarXLegajo(int legajo) throws Exception {
+
+        Query consulta = sesion.createQuery("SELECT tecnico FROM Tecnico tecnico WHERE tecnico.legajo = :legajo");
+        consulta.setParameter("legajo", legajo);
+        
+        try{
+             Tecnico tecnico = (Tecnico) consulta.uniqueResult();
+            return tecnico;
+            
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            return null;
+        }
+        
+    }
+        public Especialidad getEspecialidadXNombre(String denominacion){
+        try {
+        
+            Query consulta = sesion.createQuery("FROM Especialidad WHERE denominacion = :denominacion");
+            consulta.setParameter("denominacion", denominacion);
+
+            Especialidad especialidad = (Especialidad) consulta.uniqueResult();
+            return especialidad;
+            
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            return null;
+        }
+       
     }
 
 }
