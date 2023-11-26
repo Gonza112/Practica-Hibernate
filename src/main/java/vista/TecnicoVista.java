@@ -5,6 +5,7 @@
 package vista;
 
 import controlador.Gestor;
+import controlador.GestorGenerico;
 import controlador.GestorTecnico;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,17 +52,17 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
         NuevoTecnico = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         ttecnico = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        BuscarPorApellido = new javax.swing.JButton();
+        ListarTecnico = new javax.swing.JButton();
+        BajaTecnico = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        AsignarEspecialidad = new javax.swing.JButton();
+        EliminarEspecialidad = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -109,24 +110,24 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(ttecnico);
 
-        jButton1.setText("Buscar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BuscarPorApellido.setText("Buscar");
+        BuscarPorApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BuscarPorApellidoActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Listar Tecnico");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ListarTecnico.setText("Listar Tecnico");
+        ListarTecnico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ListarTecnicoActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Dar de Baja");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        BajaTecnico.setText("Dar de Baja");
+        BajaTecnico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                BajaTecnicoActionPerformed(evt);
             }
         });
 
@@ -138,9 +139,9 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
 
         jLabel10.setText("Ingresar legajo del tecnico");
 
-        jButton4.setText("Asignar");
+        AsignarEspecialidad.setText("Asignar");
 
-        jButton5.setText("Eliminar Especialidad");
+        EliminarEspecialidad.setText("Eliminar Especialidad");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -175,7 +176,7 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(japellido, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(jButton1))
+                                                .addComponent(BuscarPorApellido))
                                             .addComponent(restado)
                                             .addComponent(jnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
@@ -188,23 +189,23 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
                                         .addComponent(jTextField1))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(48, 48, 48)
-                                        .addComponent(jButton4)))
+                                        .addComponent(AsignarEspecialidad)))
                                 .addGap(80, 80, 80))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jemail, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(56, 56, 56)
-                        .addComponent(jButton3)
+                        .addComponent(BajaTecnico)
                         .addGap(67, 67, 67)
-                        .addComponent(jButton5)
+                        .addComponent(EliminarEspecialidad)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(74, 74, 74)
                 .addComponent(NuevoTecnico)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(ListarTecnico)
                 .addGap(34, 34, 34))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(97, 97, 97)
@@ -224,7 +225,7 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(japellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(jButton1)
+                    .addComponent(BuscarPorApellido)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -236,7 +237,7 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
                             .addComponent(jLabel10)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4))
+                        .addComponent(AsignarEspecialidad))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
@@ -258,13 +259,13 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
                 .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NuevoTecnico)
-                    .addComponent(jButton2))
+                    .addComponent(ListarTecnico))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 21, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton5))
+                    .addComponent(BajaTecnico)
+                    .addComponent(EliminarEspecialidad))
                 .addGap(174, 174, 174))
         );
 
@@ -290,7 +291,7 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
         try {
             Tecnico tecnico = new Tecnico();
             DatosContacto dContactos = new DatosContacto();
-            GestorTecnico gestort = new GestorTecnico();
+            GestorGenerico gestort = new GestorGenerico();
             
             String apellido = japellido.getText();
             String nombre = jnombre.getText();
@@ -315,11 +316,11 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_NuevoTecnicoActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void BajaTecnicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BajaTecnicoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_BajaTecnicoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BuscarPorApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarPorApellidoActionPerformed
       GestorTecnico gtecnico = new GestorTecnico();
         
       String apellido = japellido.getText();
@@ -336,15 +337,24 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
            JOptionPane.showMessageDialog(null, "Error");
         }
       
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BuscarPorApellidoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-//        GestorTecnico gtecnico = new GestorTecnico();
-//        
-//        for (Tecnico tecnico : gtecnico.listarTecnico()){
-//            
-//        }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void ListarTecnicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarTecnicoActionPerformed
+        try {
+            GestorTecnico gtecnico = new GestorTecnico();
+            
+            Tecnico tecnico = (Tecnico) gtecnico.listarTecnico();
+            
+            modelo.addRow(new Object[]{ tecnico.getId(),tecnico.getLegajo(),tecnico.getApellido(),tecnico.getNombre(),tecnico.getEspecialidades(),
+                tecnico.getDatosContacto().getCelular(), tecnico.getDatosContacto().getTelefono(), tecnico.getDatosContacto().getTelefono(),
+                 tecnico.getDatosContacto().getEmail(), tecnico.getEstado()
+            });
+        } catch (Exception ex) {
+            Logger.getLogger(TecnicoVista.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+        
+    }//GEN-LAST:event_ListarTecnicoActionPerformed
 
     private void restadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restadoActionPerformed
         // TODO add your handling code here:
@@ -352,12 +362,12 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AsignarEspecialidad;
+    private javax.swing.JButton BajaTecnico;
+    private javax.swing.JButton BuscarPorApellido;
+    private javax.swing.JButton EliminarEspecialidad;
+    private javax.swing.JButton ListarTecnico;
     private javax.swing.JButton NuevoTecnico;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

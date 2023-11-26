@@ -4,6 +4,15 @@
  */
 package vista;
 
+import controlador.GestorEspecialidadesyServicios;
+import controlador.GestorGenerico;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import modelo.Especialidad;
+import modelo.Servicio;
+
 /**
  *
  * @author gonza
@@ -15,6 +24,8 @@ public class EspecialidadYServiciosVista extends javax.swing.JInternalFrame {
      */
     public EspecialidadYServiciosVista() {
         initComponents();
+        ListaServicios();
+        ListaEspecialidades();
     }
 
     /**
@@ -26,41 +37,61 @@ public class EspecialidadYServiciosVista extends javax.swing.JInternalFrame {
 
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jservicios = new javax.swing.JTextField();
+        AgregarServicios = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cservicio = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jespecialidad = new javax.swing.JTextField();
+        EliminarServicios = new javax.swing.JButton();
+        AgregarEspecialidad = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton4 = new javax.swing.JButton();
+        cespecialidad = new javax.swing.JComboBox<>();
+        EliminarEspecialidades = new javax.swing.JButton();
 
         setClosable(true);
 
         jLabel1.setText("Nuevo servicio:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jservicios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jserviciosActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Agregar");
+        AgregarServicios.setText("Agregar");
+        AgregarServicios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarServiciosActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Lista de Servicios");
 
         jLabel3.setText("Nueva especialidad:");
 
-        jButton2.setText("Eliminar");
+        EliminarServicios.setText("Eliminar");
+        EliminarServicios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarServiciosActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Agregar");
+        AgregarEspecialidad.setText("Agregar");
+        AgregarEspecialidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarEspecialidadActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Lista de Especialidades");
 
-        jButton4.setText("Eliminar");
+        EliminarEspecialidades.setText("Eliminar");
+        EliminarEspecialidades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarEspecialidadesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,44 +104,41 @@ public class EspecialidadYServiciosVista extends javax.swing.JInternalFrame {
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2)
+                            .addComponent(jespecialidad)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton3)
+                                .addComponent(AgregarEspecialidad)
                                 .addGap(0, 104, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AgregarServicios)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jservicios, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(cespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(12, 12, 12)
                                         .addComponent(jLabel2)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(cservicio, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(17, 17, 17))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton2)
+                                .addComponent(EliminarServicios)
                                 .addGap(74, 74, 74))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)
+                        .addComponent(EliminarEspecialidades)
                         .addGap(71, 71, 71))))
         );
         layout.setVerticalGroup(
@@ -123,51 +151,174 @@ public class EspecialidadYServiciosVista extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jservicios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
                         .addGap(26, 26, 26)
-                        .addComponent(jButton1))
+                        .addComponent(AgregarServicios))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cservicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
                         .addGap(33, 33, 33)
-                        .addComponent(jButton2)))
+                        .addComponent(EliminarServicios)))
                 .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(AgregarEspecialidad)
+                    .addComponent(EliminarEspecialidades))
                 .addContainerGap(165, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jserviciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jserviciosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jserviciosActionPerformed
+
+    private void AgregarServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarServiciosActionPerformed
+        try {
+            GestorGenerico gServicios = new GestorGenerico ();
+            Servicio servicio = new Servicio();
+            String servicios = jservicios.getText();
+            if (servicios.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Llenar campos para guardar");
+           } else { 
+                
+            servicio.setDenominacion(servicios);
+            gServicios.guardar(servicio);
+            
+            jservicios.setText("");
+            cservicio.removeAllItems();
+            
+            ListaServicios();
+            } 
+        } catch (Exception ex) {
+         JOptionPane.showMessageDialog(null, "Error al Guardar el servicio" );
+        }
+        
+       
+    }//GEN-LAST:event_AgregarServiciosActionPerformed
+
+    private void AgregarEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarEspecialidadActionPerformed
+        try {
+            GestorGenerico gEspecialidad  = new GestorGenerico();
+            Especialidad especialidad = new Especialidad();
+            
+            String espe = jespecialidad.getText();
+          if (espe.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Llenar campos para guardar");
+           } else { 
+            especialidad.setDenominacion(espe);
+            gEspecialidad.guardar(especialidad);
+            
+            jespecialidad.setText("");
+            cespecialidad.removeAllItems();
+            ListaEspecialidades();
+             }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error al Guardar la especialidad" );
+        }
+    }//GEN-LAST:event_AgregarEspecialidadActionPerformed
+
+    private void EliminarServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarServiciosActionPerformed
+        try {
+            GestorGenerico gGenerico = new GestorGenerico();
+            
+            String nombre = cservicio.getItemAt(cservicio.getSelectedIndex());
+            List<Servicio> servicio = gGenerico.listar(Servicio.class);
+            for (Servicio servi : servicio){
+               String denominacion =  servi.getDenominacion();
+               
+               if(denominacion.equals(nombre)){
+                gGenerico.eliminar(servi);
+                } 
+            } 
+            cservicio.removeAllItems();
+            ListaServicios();
+        } catch (Exception ex) {
+           JOptionPane.showMessageDialog(null,"Error al intentar eliminar");
+        }
+      
+    }//GEN-LAST:event_EliminarServiciosActionPerformed
+
+    private void EliminarEspecialidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarEspecialidadesActionPerformed
+        try {
+            GestorGenerico gGenerico = new GestorGenerico();
+            
+            String nombre = cespecialidad.getItemAt(cespecialidad.getSelectedIndex());    
+            List<Especialidad> especialidad = gGenerico.listar(Especialidad.class);
+            for(Especialidad espec : especialidad){
+                String denominacion = espec.getDenominacion();
+                
+                if(denominacion.equals(nombre)){
+                    gGenerico.eliminar(espec);
+                }
+            }
+            cespecialidad.removeAllItems();
+            ListaEspecialidades();
+        } catch (Exception ex) {
+           JOptionPane.showMessageDialog(null,"Error al intentar eliminar");
+        }
+    }//GEN-LAST:event_EliminarEspecialidadesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton AgregarEspecialidad;
+    private javax.swing.JButton AgregarServicios;
+    private javax.swing.JButton EliminarEspecialidades;
+    private javax.swing.JButton EliminarServicios;
+    private javax.swing.JComboBox<String> cespecialidad;
+    private javax.swing.JComboBox<String> cservicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jespecialidad;
+    private javax.swing.JTextField jservicios;
     // End of variables declaration//GEN-END:variables
+    
+    public void ListaServicios(){
+        try {
+            GestorEspecialidadesyServicios gServicio = new GestorEspecialidadesyServicios();
+            GestorGenerico gGenerico = new GestorGenerico();
+              List<Servicio> servicio = gGenerico.listar(Servicio.class);
+            
+       
+            for (Servicio servi : servicio){
+            
+            cservicio.addItem(servi.getDenominacion());
+            }
+            
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null,"Erro al cargar la lista");
+        }
+   }  
+     public void ListaEspecialidades(){
+            GestorEspecialidadesyServicios gServicio = new GestorEspecialidadesyServicios();
+            GestorGenerico gGenerico = new GestorGenerico();
+            
+         try {
+           
+            List<Especialidad> especialidad = gGenerico.listar(Especialidad.class);
+            for ( Especialidad espec : especialidad){
+                cespecialidad.addItem(espec.getDenominacion());
+             } 
+        } catch (Exception ex) {
+           JOptionPane.showMessageDialog(null,"Erro al cargar la lista");
+        }
+       
+       
+   }     
+        
+
+
+
 }

@@ -126,6 +126,11 @@ public class Principal extends javax.swing.JFrame {
         jMenu2.setText("Asignaciones");
 
         jMenuItem2.setText("Especialidades y Servicios");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem2);
 
         jMenuBar1.add(jMenu2);
@@ -159,6 +164,13 @@ public class Principal extends javax.swing.JFrame {
         Escritorio.add(Tecnicov);
         Escritorio.moveToFront(Tecnicov);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        EspecialidadYServiciosVista EspeServ = new EspecialidadYServiciosVista();
+        EspeServ .setVisible(true);
+        Escritorio.add(EspeServ);
+        Escritorio.moveToFront(EspeServ);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments

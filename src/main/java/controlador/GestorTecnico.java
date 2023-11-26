@@ -65,7 +65,7 @@ public class GestorTecnico extends Gestor {
     }
      public List listarTecnico() throws Exception {
 
-        Query consulta = sesion.createQuery("SELECT Tecnico FROM Tecnico");
+        Query consulta = sesion.createQuery("SELECT tecnico FROM Tecnico tecnico");
         List<Tecnico> lista;
         try {
             lista = consulta.list();
