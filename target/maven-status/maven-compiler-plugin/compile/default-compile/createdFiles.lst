@@ -6,10 +6,12 @@ vista\OperadorVista$2.class
 vista\ClienteVista$7.class
 vista\EspecialidadYServiciosVista$3.class
 vista\Principal$5.class
+vista\Principal$8.class
 com\utn\trabajofinalargprograma\MainProgram.class
 modelo\OperadorMesaAyuda.class
 vista\ClienteVista$8.class
 vista\TecnicoVista$8.class
+vista\Principal$6.class
 vista\TecnicoVista$3.class
 vista\EspecialidadYServiciosVista$2.class
 controlador\Gestor.class
@@ -62,3 +64,4 @@ vista\Principal$4.class
 vista\TecnicoVista$7.class
 vista\OperadorVista$5.class
 vista\TecnicoVista$4.class
+vista\Principal$7.class
