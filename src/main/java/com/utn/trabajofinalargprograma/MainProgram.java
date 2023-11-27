@@ -7,14 +7,18 @@ package com.utn.trabajofinalargprograma;
 
 
 import controlador.GestorCliente;
+import controlador.GestorGenerico;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Cliente;
 import modelo.DatosContacto;
+import modelo.Especialidad;
+import modelo.OperadorMesaAyuda;
 
 /**
  *
@@ -29,12 +33,22 @@ public class MainProgram {
 ////         TODO code application logic here
 //        Cliente Cliente = new Cliente();
 //        GestorCliente gCliente = new GestorCliente();
-//////    
-//          Cliente clientec = gCliente.getClienteXCuit(56165122);
-//          System.out.println(""+clientec.getDatosContacto().getId());
+           GestorGenerico gGenerico = new GestorGenerico();
+////          Cliente clientec = gCliente.getClienteXCuit(56165122);
+////          System.out.println(""+clientec.getDatosContacto().getId());
+//
+//               int legajo = 88601;
+//    
+//              OperadorMesaAyuda operador = (OperadorMesaAyuda) gGenerico.buscarObjetoPorAtributo(OperadorMesaAyuda.class, "legajo" , legajo);
+//                long idC = operador.getDatosContacto().getId();
+//        System.out.println("" + idC);
 
-
-        
+//       Object apell = "perez";
+//       
+//        List<OperadorMesaAyuda> operador  =   gGenerico.buscarPorAtributo1(OperadorMesaAyuda.class, "apellido", apell);
+//            for(OperadorMesaAyuda ope : operador){
+//                System.out.println(ope.getApellido() + " - " + ope.getLegajo());
+//            }
 //        try {
 //            obtenerConexion();
 //             System.out.println("BASE DE DATOS GENERADA");

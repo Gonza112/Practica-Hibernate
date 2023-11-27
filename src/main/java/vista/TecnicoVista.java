@@ -182,41 +182,39 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGap(24, 24, 24)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(restado)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jcelular, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jnombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+                                            .addComponent(japellido, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jcelular, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addGap(37, 37, 37)
+                                        .addComponent(BuscarPorApellido)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(restado)
-                                            .addComponent(jnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(japellido, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(BuscarPorApellido)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(28, 28, 28))
+                                                .addGap(48, 48, 48)
+                                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(53, 53, 53)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(cespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jlegajo, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(42, 42, 42))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(61, 61, 61)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(cespecialidad, 0, 184, Short.MAX_VALUE)
-                                        .addComponent(jlegajo))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(48, 48, 48)
-                                        .addComponent(AsignarEspecialidad)))
-                                .addGap(80, 80, 80))
+                                        .addComponent(AsignarEspecialidad)
+                                        .addGap(93, 93, 93))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jemail, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jtelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                                    .addComponent(jemail))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -338,7 +336,7 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
             tecnico.setDatosContacto(dContactos);
             gestort.guardar(tecnico);
         } catch (Exception ex) {
-            Logger.getLogger(TecnicoVista.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Error al cargar datos");
         }
     }//GEN-LAST:event_NuevoTecnicoActionPerformed
 
@@ -483,29 +481,27 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
         GestorTecnico gTecnico = new GestorTecnico();
         DatosContacto dcontacto = new DatosContacto();
         GestorGenerico gGenerico = new GestorGenerico();
-        int selec =  ttecnico.getSelectedRow();
-         
-           if (selec != -1) {
+        int selec = ttecnico.getSelectedRow();
+
+        if (selec != -1) {
             try {
                 long idT = (long) ttecnico.getValueAt(selec, 0);
                 int legajo = (int) ttecnico.getValueAt(selec, 1);
-                 String apellido = japellido.getText();
-                 String nombre = jnombre.getText();
-                 String estado = restado.isSelected() ? "activo" : "inactivo";
-                 long celular = Long.parseLong(jcelular.getText());
-                 long telefono = Long.parseLong(jtelefono.getText());
-                 String email = jemail.getText();
-            
-            
+                String apellido = japellido.getText();
+                String nombre = jnombre.getText();
+                String estado = restado.isSelected() ? "activo" : "inactivo";
+                long celular = Long.parseLong(jcelular.getText());
+                long telefono = Long.parseLong(jtelefono.getText());
+                String email = jemail.getText();
+
                 Tecnico tecnico = gGenerico.BuscarXLegajo(legajo);
                 long idC = tecnico.getDatosContacto().getId();
-                
+
                 dcontacto.setId(idC);
                 dcontacto.setCelular(celular);
                 dcontacto.setTelefono(telefono);
                 dcontacto.setEmail(email);
-                
-                
+
                 tecnico.setLegajo(legajo);
                 tecnico.setApellido(apellido);
                 tecnico.setNombre(nombre);
@@ -513,8 +509,8 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
                 tecnico.setDatosContacto(dcontacto);
                 gTecnico.modificarTecnico(tecnico);
             } catch (Exception ex) {
-               JOptionPane.showMessageDialog(null,"Error al cargar datos");
-               ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Error al cargar datos");
+                ex.printStackTrace();
             }
                 
                } 

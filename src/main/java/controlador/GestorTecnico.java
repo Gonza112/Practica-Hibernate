@@ -61,6 +61,7 @@ public class GestorTecnico extends Gestor {
         } catch (RuntimeException e) {
             e.printStackTrace();
             throw new Exception(e.getMessage());
+            
         }
     }
      public List listarTecnico() throws Exception {

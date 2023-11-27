@@ -128,10 +128,22 @@ public class GestorGenerico extends Gestor {
             throw new Exception(e.getMessage());
         }
     }
+  public List buscarPorAtributo1(Class clase, String nombreAtributo, Object valorAtributo) {
 
+        Query consulta = sesion.createQuery("from " + clase.getSimpleName() + " entidad where entidad." + nombreAtributo + " =:valor");
+        consulta.setParameter("valor", valorAtributo);
+        List<Object> lista;
+        try {
+            lista = consulta.list();
+            return lista;
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
     public List buscarPorAtributo(Class clase, Object valorAtributo) {
 
-        Query consulta = sesion.createQuery("from " + clase.getSimpleName() + " entidad where entidad." + " =:valor");
+        Query consulta = sesion.createQuery("from " + clase.getSimpleName() + " entidad where entidad." + " = :valor");
         consulta.setParameter("valor", valorAtributo);
         List<Object> lista;
         try {

@@ -2,8 +2,10 @@ controlador\GestorCliente.class
 modelo\Servicio.class
 controlador\GestorTecnico.class
 vista\Principal.class
+vista\OperadorVista$2.class
 vista\ClienteVista$7.class
 vista\EspecialidadYServiciosVista$3.class
+vista\Principal$5.class
 com\utn\trabajofinalargprograma\MainProgram.class
 modelo\OperadorMesaAyuda.class
 vista\ClienteVista$8.class
@@ -12,10 +14,13 @@ vista\TecnicoVista$3.class
 vista\EspecialidadYServiciosVista$2.class
 controlador\Gestor.class
 modelo\ClienteServicio.class
+vista\OperadorVista$6.class
 vista\OperadorVista.class
 vista\ClienteVista$1.class
 modelo\Empleado.class
 vista\TecnicoVista$6.class
+controlador\GestorOperador.class
+vista\OperadorVista$3.class
 vista\Principal$2.class
 vista\ClienteVista$10.class
 vista\TecnicoVista.class
@@ -30,7 +35,9 @@ controlador\GestorEspecialidadesyServicios.class
 vista\TecnicoVista$9.class
 vista\ClienteVista$2.class
 modelo\Especialidad.class
+vista\OperadorVista$7.class
 vista\Principal$3.class
+vista\OperadorVista$4.class
 vista\ClienteVista$11.class
 vista\ClienteVista.class
 vista\EspecialidadYServiciosVista$5.class
@@ -38,6 +45,7 @@ vista\ClienteVista$5.class
 vista\TecnicoVista$5.class
 modelo\ReporteIncidencia.class
 modelo\DatosContacto.class
+vista\OperadorVista$1.class
 vista\ClienteVista$3.class
 vista\TecnicoVista$1.class
 vista\Principal$1.class
@@ -50,4 +58,5 @@ modelo\EntidadId.class
 modelo\Cliente.class
 vista\Principal$4.class
 vista\TecnicoVista$7.class
+vista\OperadorVista$5.class
 vista\TecnicoVista$4.class

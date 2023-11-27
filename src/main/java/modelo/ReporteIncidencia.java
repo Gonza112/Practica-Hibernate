@@ -22,6 +22,7 @@ import lombok.Setter;
 @Table(name = "arg_prog_reporte_incidencia")
 @Getter @Setter
 public class ReporteIncidencia  extends EntidadId {
+  
    @Column(nullable = false , unique = true)
     private String codigoReporte;
     @Column(nullable = false)
