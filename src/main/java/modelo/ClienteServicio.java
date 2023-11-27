@@ -18,7 +18,15 @@ import lombok.Setter;
 @Entity
 @Table(name = "arg_prog_cliente_servicio")
 @Getter @Setter
-public class ClienteServicio extends EntidadId{
+public class ClienteServicio extends EntidadId implements Comparable<ClienteServicio>{
+    
+        public ClienteServicio(){}
+    
+    public ClienteServicio(Cliente cliente, Servicio servicio) {
+        this.cliente = cliente;
+        this.servicio = servicio;
+    }
+    
     
     @ManyToOne
     @JoinColumn(name = "idcliente")
@@ -26,4 +34,9 @@ public class ClienteServicio extends EntidadId{
     @ManyToOne
     @JoinColumn(name = "idservicio")
     private Servicio servicio;
+
+    @Override
+    public int compareTo(ClienteServicio o) {
+        return Long.valueOf(this.cliente.getCuit()).compareTo(o.getCliente().getCuit());
+    }
 }

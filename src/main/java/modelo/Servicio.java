@@ -23,6 +23,7 @@ public class Servicio  extends EntidadId{
     
     @Column(nullable = false)
     private String denominacion;
+    
     @ManyToMany(mappedBy = "servicios")
     private List<Cliente> clientes; // N a N
     

@@ -4,6 +4,7 @@
  */
 package modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -34,14 +35,14 @@ public class Cliente extends EntidadId{
     private long cuit;
     
     @ManyToMany(fetch = FetchType.LAZY,
-    targetEntity = Especialidad.class,
+    targetEntity = Servicio.class,
     cascade = CascadeType.ALL)
     @JoinTable(
     name="arg_prog_cliente_servicio", 
             joinColumns =@ JoinColumn(name="idcliente"),
             inverseJoinColumns = @JoinColumn(name="idservicio")
     )
-    private List<Servicio> servicios;//N a N
+     private List<Servicio> servicios;//N a N
     
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ReporteIncidencia> reportesIncidencia;//1 a N
@@ -51,7 +52,15 @@ public class Cliente extends EntidadId{
     private DatosContacto datosContacto;//1 a 1
     @Column(nullable = false)
     private String Estado;
-
+    
+   
+    
+       public void addServicio(Servicio servicio){
+        if (this.servicios== null)
+        this.servicios = new ArrayList<Servicio>();
+        this.servicios.add(servicio);
+    
+    }
     @Override
     public String toString() {
         return "Cliente{" + razonSocial +  cuit   + servicios +  reportesIncidencia +  datosContacto + '}';

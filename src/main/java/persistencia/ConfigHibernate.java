@@ -22,7 +22,7 @@ public class ConfigHibernate {
             config.setProperty("hibernate.connection.password", "14751475");
             config.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
             config.setProperty("hibernate.show_sql", "true");// true muestra query por consola // en produccion pasar a false
-            config.setProperty("hibernate.hbm2ddl.auto", "update"); // create-drop crea y elimina la base de datos(solo en inicio) cambiar a update para comenzar a usar 
+            config.setProperty("hibernate.hbm2ddl.auto", "uodate"); // create-drop crea y elimina la base de datos(solo en inicio) cambiar a update para comenzar a usar 
             config.setProperty("hibernate.c3p0.min_size","0");
             config.setProperty("hibernate.c3p0.max_size","7");
             config.setProperty("hibernate.c3p0.timeout","100");

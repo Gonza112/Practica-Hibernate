@@ -17,6 +17,7 @@ modelo\ClienteServicio.class
 vista\OperadorVista$6.class
 vista\OperadorVista.class
 vista\ClienteVista$1.class
+vista\ClienteVista$13.class
 modelo\Empleado.class
 vista\TecnicoVista$6.class
 controlador\GestorOperador.class
@@ -49,6 +50,7 @@ vista\OperadorVista$1.class
 vista\ClienteVista$3.class
 vista\TecnicoVista$1.class
 vista\Principal$1.class
+vista\TecnicoVista$10.class
 persistencia\ConfigHibernate.class
 modelo\Tecnico.class
 vista\ClienteVista$6.class

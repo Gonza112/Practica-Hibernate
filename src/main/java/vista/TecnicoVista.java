@@ -146,6 +146,12 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
 
         jLabel8.setText("Agregar Tecnico");
 
+        cespecialidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cespecialidadActionPerformed(evt);
+            }
+        });
+
         jLabel9.setText("Especialidades");
 
         jLabel10.setText("Ingresar legajo del tecnico");
@@ -427,17 +433,16 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_restadoActionPerformed
 
     private void AsignarEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarEspecialidadActionPerformed
-          GestorTecnico gTecnico = new GestorTecnico();
+
           GestorGenerico gGenerico = new GestorGenerico();
-          GestorEspecialidadesyServicios  espyserv = new GestorEspecialidadesyServicios();
-          TecnicoEspecialidad tEspecial = new TecnicoEspecialidad();
+        
         try {
           
             String especial = cespecialidad.getItemAt(cespecialidad.getSelectedIndex());
             int legajo = Integer.parseInt(jlegajo.getText());
             
-            Tecnico tec = gGenerico.BuscarXLegajo(legajo);     
-            Especialidad especialidad = gGenerico.getEspecialidadXNombre(especial);
+            Tecnico tec = (Tecnico) gGenerico.buscarObjetoPorAtributo(Tecnico.class, "legajo", legajo);
+            Especialidad especialidad = (Especialidad) gGenerico.buscarObjetoPorAtributo(Especialidad.class, "denominacion", especial);
             
             
             tec.addEspecialidad(especialidad);
@@ -515,6 +520,10 @@ public class TecnicoVista extends javax.swing.JInternalFrame {
                 
                } 
     }//GEN-LAST:event_ModificarActionPerformed
+
+    private void cespecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cespecialidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cespecialidadActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

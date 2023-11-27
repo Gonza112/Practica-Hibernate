@@ -33,7 +33,7 @@ public class MainProgram {
 ////         TODO code application logic here
 //        Cliente Cliente = new Cliente();
 //        GestorCliente gCliente = new GestorCliente();
-           GestorGenerico gGenerico = new GestorGenerico();
+//           GestorGenerico gGenerico = new GestorGenerico();
 ////          Cliente clientec = gCliente.getClienteXCuit(56165122);
 ////          System.out.println(""+clientec.getDatosContacto().getId());
 //
